@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {Layer, Rect, Stage, Line} from "react-konva";
 import Konva from "konva";
 import KonvaEventObject = Konva.KonvaEventObject;

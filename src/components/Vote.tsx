@@ -1,7 +1,5 @@
-import {useRecoilState, useRecoilValue} from "recoil";
-import {playerColorsState, playerDataState} from "./gameState.ts";
-import {Simulate} from "react-dom/test-utils";
-import play = Simulate.play;
+import {useRecoilState} from "recoil";
+import {playerDataState} from "./gameState.ts";
 import {useState} from "react";
 
 
