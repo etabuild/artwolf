@@ -14,7 +14,7 @@ function App() {
     return (
         <RecoilRoot>
             <>
-                <h1>artwolf</h1>
+                <h1>artwaaaolf</h1>
                 <Vote></Vote>
                {/* <Game/>*/}
 
