@@ -11,6 +11,7 @@ button {
     border-radius:3px;
     background: none;
     color: #4848ff;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 button:hover{
     background-color: #e0e0ff;

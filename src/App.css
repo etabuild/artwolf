@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+
 }
 #stage{
   border: solid 1px #fff
