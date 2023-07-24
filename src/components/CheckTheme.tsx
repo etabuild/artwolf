@@ -1,24 +1,26 @@
 /*
 const [checkCount, setCheckCount] = useState<number>(0)
 */
-import {useSetRecoilState} from "recoil";
+import {useRecoilValue, useSetRecoilState} from "recoil";
 import {gameState} from "./gameState.ts";
 import {useEffect, useState} from "react";
+import {playerDataState} from "./playerDataState.ts";
 /*
 import {theme} from "../data/theme.js";
 */
 
 export const CheckTheme = () => {
     const setGameState = useSetRecoilState(gameState)
+    const playerData = useRecoilValue(playerDataState)
     const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0)
-/*    const decideTheme = () =>{
+    /*    const decideTheme = () =>{
 
-    }*/
+        }*/
     useEffect(() => {
         setCurrentPlayerIndex(0)
-/*
-        decideTheme()
-*/
+        /*
+                decideTheme()
+        */
     }, [])
     return (
         <>
@@ -31,7 +33,15 @@ export const CheckTheme = () => {
             }}>戻る
             </button>
             <p>{currentPlayerIndex + 1}番目の人のお題</p>
-            <button onClick={() => setCurrentPlayerIndex(currentPlayerIndex + 1)}>次の人へ</button>
+            <button onClick={() => {
+                console.log(currentPlayerIndex)
+                console.log(playerData.length)
+                currentPlayerIndex<playerData.length-1? setCurrentPlayerIndex(currentPlayerIndex + 1): setGameState("Game")
+
+
+            }}>
+                次の人へ
+            </button>
         </>
     )
 }

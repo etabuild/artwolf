@@ -1,6 +1,9 @@
 import {useRecoilState} from "recoil";
 import {playerDataState} from "./playerDataState.ts";
 import {useState} from "react";
+/*
+import {gameState} from "./gameState.ts";
+*/
 
 
 export const Vote = () => {
@@ -15,6 +18,9 @@ export const Vote = () => {
             }
         )
     }
+/*
+    const setCurrentGameState = useSetRecoilState(gameState)
+*/
     const [playerData, setPlayerData] = useRecoilState(playerDataState)
     const [voteCount, setVoteCount] = useState(0)
     return (
@@ -24,13 +30,20 @@ export const Vote = () => {
 
                 playerData.map((data, index) =>
                     <button key={index.toString()} onClick={() => {
-                        setPlayerData((prevState) =>
-                            prevState.map((value, stateIndex) => (stateIndex === index ? {
-                                color: prevState[index].color,
-                                votesCount: prevState[index].votesCount + 1
-                            } : value)))
-                        setVoteCount(voteCount + 1)
 
+                        setPlayerData((prevState) =>
+                            prevState.map((value, stateIndex) =>
+                                (stateIndex === index ? {
+                                    color: prevState[index].color,
+                                    votesCount: prevState[index].votesCount + 1
+                                } : value)))
+                        setVoteCount(voteCount + 1)
+                        if (voteCount <= playerData.length - 1) {
+                            
+/*
+                            setCurrentGameState("")
+*/
+                        }
                     }}>
                         <div style={voteButtonIconStyle(data.color)}></div>
                         {data.color}
